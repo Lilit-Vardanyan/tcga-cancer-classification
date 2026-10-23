@@ -65,9 +65,44 @@ Random seeds are set where needed. Preprocessing should be fitted on training da
 
 ## MLflow
 
+MLflow can be used to track model experiments, parametrs and evaluation metrics.
+
 ## Streamlit Application
 
+The streamlit application allows users to upload gene-expression data and obtain cancer type predictions from the trained model.
+Live demo: https://cancer-classifier-699539648647.us-central1.run.app
+
+Run locally:
+create and activate the python virtual envornment from the project root and istall the deployment dependencies:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r deployment/requirements.txt
+```
+
+Start the Streamlit application:
+
+```bash
+cd deployment
+streamlit run app.py
+```
+Open the local URL in the terminal
+
 ## Docker
+
+The Docker configuration is located at deployment/dockerfile
+
+Built the image from the root:
+
+```bash
+docker build -f deployment/dockerfile -t tcga-cancer-app ./deployment
+```
+Run the container:
+```bash
+docker run --rm -p 8080:8080 tcga-cancer-app
+```
+Open http://localhost:8080 in the browser
 
 ## Limitations
 
