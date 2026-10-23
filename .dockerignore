@@ -1,0 +1,13 @@
+.git/
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env
+.env.*
+!.env.example
+mlruns/
+data/raw/
+data/interim/
+notebooks/

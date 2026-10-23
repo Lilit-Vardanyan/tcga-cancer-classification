@@ -1,0 +1,13 @@
+datasets
+pandas
+matplotlib
+scikit-learn
+numpy
+lightgbm 
+catboost
+xgboost
+joblib
+jupyter
+ipykernel
+streamlit
+mlflow
