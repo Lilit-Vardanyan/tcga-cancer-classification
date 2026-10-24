@@ -61,7 +61,7 @@ Final test set results will be documented after model selection.
 
 ## Reproducibility
 
-Random seeds are set where needed. Preprocessing should be fitted on training data only, with validation set for model selection and the test set is reserved for final evaluation.
+Random seeds are set where needed. The notebooks use fixed random seed for data splitting and cross-validation to improve reproducibility.Preprocessing should be fitted on training data only, with validation set for model selection and the test set is reserved for final evaluation.
 
 ## MLflow
 
@@ -88,10 +88,6 @@ mlflow server --backend-store-uri sqlite:///mlflow.db
 Open the MLflow dashboard in browser:
 
 Select the Cancer-Classification experiment to view the recorded runs, compare metrics, and inspect the parameters for each experimnt.
-
-## Reproducibility
-
-The notebooks use fixed random seed for data splitting and cross-validation to improve reproducibility.
 
 ## Streamlit Application
 
