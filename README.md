@@ -65,7 +65,33 @@ Random seeds are set where needed. Preprocessing should be fitted on training da
 
 ## MLflow
 
-MLflow can be used to track model experiments, parametrs and evaluation metrics.
+MLflow is used to track model experiments, parametrs and evaluation metrics.
+The MLflow experiment is named Cancer-Classification. Each training run records relevant experiment information:
+
+Paramters: model configuration and selected hyperparameters.
+Metrics: cross-validation macro F1-score, validation accuracy, and validation macro F1-score.
+Tags: information identifying the model and dataset used for the experirment.
+Model artifacts: model files when model logging completes successfully
+
+MLflow Tracking Setup
+
+MLflow uses a SQLite database (mlflow.db) located in the project root to store experiment tracking information. The database is generated locally and is excluded from version control.
+
+Install MLflow:
+
+pip install mlflow
+
+From the project root, start the MLflow tracking server:
+
+mlflow server --backend-store-uri sqlite:///mlflow.db
+
+Open the MLflow dashboard in browser:
+
+Select the Cancer-Classification experiment to view the recorded runs, compare metrics, and inspect the parameters for each experimnt.
+
+## Reproducibility
+
+The notebooks use fixed random seed for data splitting and cross-validation to improve reproducibility.
 
 ## Streamlit Application
 
@@ -107,4 +133,4 @@ Open http://localhost:8080 in the browser
 ## Limitations
 
 This project is used only for educational purposes. 
-It is not intended for clinical diagnosis or medical decisions. 
+It is not intended for clinical diagnosis or medical decisions.
