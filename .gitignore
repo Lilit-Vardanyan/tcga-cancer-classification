@@ -42,3 +42,6 @@ data/interim/
 # Temporary output
 tmp/
 temp/
+
+# Local MLflow backups
+notebooks/mlruns_backup/
